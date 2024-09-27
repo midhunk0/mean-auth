@@ -4,7 +4,6 @@ const cors=require("cors");
 const mongoose=require("mongoose");
 const cookieParser=require("cookie-parser");
 const dotenv=require("dotenv").config();
-// const bodyParser=require("body-parser");
 
 const port=8000;
 const app=express();
@@ -12,7 +11,7 @@ const app=express();
 app.use(
     cors({
         credentials: true,
-        origin: "http://localhost:4200"
+        origin: process.env.FRONT_END_API
     })
 )
 
