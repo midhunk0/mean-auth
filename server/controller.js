@@ -42,7 +42,7 @@ async function registerUser(req, res){
         });
         await user.save();
         const token=generateToken(user._id);
-        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "Lax", maxAge: 3600000 });
+        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "None", maxAge: 3600000 });
         res.status(200).json({ user, message: "User created successfully" });
     }
     catch(err){
@@ -65,7 +65,7 @@ async function loginUser(req, res){
             return res.status(403).json({ message: "Incorrect password" });
         }
         const token=generateToken(user._id);
-        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "Lax", maxAge: 3600000 });
+        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "None", maxAge: 3600000 });
         res.status(200).json({ user, token, message: "Login successful" });
     }
     catch(err){
