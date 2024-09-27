@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
 @Injectable({ providedIn: "root" })
 
 export class AuthService{
-    private apiUrl="http://localhost:8000";
+    private apiUrl="https://mean-auth-2osr.onrender.com";
     
     constructor(private http: HttpClient){}
 

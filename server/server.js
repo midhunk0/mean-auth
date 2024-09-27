@@ -24,7 +24,7 @@ app.get("/", (req, res)=>{
     res.json({message: "hello from server"});
 });
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URL)
     .then(()=>console.log("database connected"))
     .catch((error)=>console.log("database not connected", error))
 
