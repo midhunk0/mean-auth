@@ -1,0 +1,270 @@
+:root {
+    color-scheme: light dark;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-div {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+    .light{
+        display: flex;
+    }
+    
+    .dark{
+        display: none;
+    }
+    .main-div {
+        background: #0f1512;
+        background: linear-gradient(90deg, rgba(15, 21, 18, 1) 58%, rgba(15, 21, 18, 0.1) 100%);
+    }
+
+    .auth-text, .head-div{
+        color: #bee9e4;
+    }
+
+    .buttons-div, .form-div{
+        background: #0f1512;
+    }
+
+
+    .backButton, .logoutButton, .editButton{
+        color: #bee9e4;
+        background: #253c33;
+        border: 1px solid #bee9e4;
+    }
+    
+    .backButton:hover, .logoutButton:hover, .editButton:hover{
+        background: #bee9e4;
+        color:#0f1512;
+    }
+
+    a{
+        color: #649683;
+    }
+
+    a:hover{
+        color: #bee9e4;
+    }
+
+    .loginButton, .registerButton, .updateButton, .deleteButton{
+        color: #0f1512;
+        background: #bee9e4;
+        border: 1px solid #bee9e4;
+    }
+    
+    .loginButton:hover, .registerButton:hover, .updateButton:hover, .deleteButton:hover{
+        color: #bee9e4;
+        background: #253c33;
+    }
+    
+    .input{
+        background: #253c33;
+        color: #bee9e4;
+        border: 1px solid #bee9e4;
+    }
+    
+    .input::placeholder{
+        color: #bee9e4;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .dark{
+        display: flex;
+    }
+    
+    .light{
+        display: none;
+    }
+
+    .main-div {
+        background: #eaf0ed;
+        background: linear-gradient(90deg, rgba(234, 240, 237, 1) 58%, rgba(234, 240, 237, 0.1) 100%);
+    }
+
+    .auth-text, .head-div{
+        color: #16413c;
+    }
+
+    .buttons-div, .form-div{
+        background: #eaf0ed;
+    }
+
+    .backButton, .logoutButton, .editButton{
+        color: #16413c;
+        background: #c3dad1;
+        border: 1px solid #16413c;
+    }
+    
+    .backButton:hover, .logoutButton:hover, .editButton:hover{
+        background: #16413c;
+        color:#eaf0ed;
+    }
+
+    a{
+        color: #699b88;
+    }
+
+    a:hover{
+        color: #16413c;
+    }
+
+    .loginButton, .registerButton, .updateButton, .deleteButton{
+        color: #eaf0ed;
+        background: #16413c;
+        border: 1px solid #16413c;
+    }
+    
+    .loginButton:hover, .registerButton:hover, .updateButton:hover, .deleteButton:hover{
+        color: #16413c;
+        background: #c3dad1;
+    }
+    
+    .input{
+        background: #c3dad1;
+        color: #16413c;
+        border: 1px solid #16413c;
+    }
+    
+    .input::placeholder{
+        color: #16413c;
+    }
+}
+
+.image-div {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.input{
+    padding: 12px;
+    font-size: large;
+    border-radius: 4px;
+    outline: none;
+}
+
+.image-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.auth-text{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+}
+
+.buttons-div, .form-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 40vw;
+}
+
+.head-div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 5px;
+    width: 60%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+}
+
+.password{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.password input{
+    width: 100%;
+}
+
+.password img{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 10px;
+}
+
+.loginButton, .registerButton, .updateButton, .deleteButton{
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 12px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.backButton, .logoutButton, .editButton{
+    outline: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 945px){
+    .image-div img{
+        display: none;
+    }
+
+    .form-div, .buttons-div{
+        width: 100vw;
+    }
+
+    .head-div, .form, .buttons{
+        width: 50%;
+    }
+}
+
+@media (max-width: 495px){
+    .auth-text{
+        top: 20px;
+        left: 20px;
+    }
+
+    .form-div, .buttons-div{
+        justify-content: start;
+        padding-top: 40%;
+    }
+
+    .head-div, .form, .buttons{
+        width: 100%;
+    }
+}

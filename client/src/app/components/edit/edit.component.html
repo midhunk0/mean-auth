@@ -1,0 +1,16 @@
+<div class="main-div">
+    <div class="image-div">
+        <img src="./assets/images/background.jpg" alt="background"/>
+    </div>
+    <div class="form-div">
+        <div class="head-div">
+            <h1>Update account details</h1>
+            <br>
+        </div>
+        <form class="form" #updateForm="ngForm" (ngSubmit)="doUpdate(updateForm)">
+            <input type="text" placeholder="Name" class="input" name="name" ngModel>
+            <button type="button" class="backButton" (click)="goBack()">Go Back</button>
+            <button type="submit" class="updateButton">Update</button>
+        </form>
+    </div>
+</div>

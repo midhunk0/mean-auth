@@ -1,0 +1,73 @@
+.main-div{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.image-div{
+    display: flex;
+    align-items: center;
+    width: 70vw;
+}
+
+.image-div>img{
+    overflow: hidden;
+}
+
+.form-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 30vw;
+}
+
+.head-div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.updateForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.updateInput{
+    padding: 8px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.backButton, .updateButton{
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.updateButton{
+    background: green;
+}
+
+.backButton{
+    background: red;
+}

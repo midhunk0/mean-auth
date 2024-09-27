@@ -1,0 +1,62 @@
+<div class="main-div">
+    <div class="image-div">
+        <img src="assets/images/background.jpg" alt="background">
+    </div>
+    <h1 class="auth-text">Auth.</h1>         
+    <div class="form-div">
+        <div class="head-div">
+            <h1>Create a new account</h1>
+            <br/>
+            <p>Already have an account? <a href="/login">Login</a></p>
+            <br/>
+        </div>
+        <form class="form" #registerForm="ngForm" (ngSubmit)="doRegister(registerForm)">
+            <input type="text" class="input" placeholder="Name" name="name" ngModel>
+            <input type="text" class="input" placeholder="Username" name="username" ngModel>
+            <input type="email" class="input" placeholder="Email" name="email" ngModel>
+            <div class="password">
+                <input 
+                    [type]="visible.password ? 'text' : 'password'" 
+                    placeholder="Password"
+                    class="input"
+                    name="password" 
+                    ngModel
+                />
+                <img 
+                    class="light"
+                    [src]="visible.password ? './assets/images/vonlight.png' : './assets/images/vofflight.png'"
+                    alt="visibility-toggle"
+                    (click)="toggleVisibility('password')"
+                />
+                <img 
+                    class="dark"
+                    [src]="visible.password ? './assets/images/vondark.png' : './assets/images/voffdark.png'"
+                    alt="visibility-toggle"
+                    (click)="toggleVisibility('password')"
+                />
+            </div>
+            <div class="password">
+                <input 
+                    [type]="visible.confirmPassword ? 'text' : 'password'" 
+                    placeholder="Confirm Password"
+                    class="input"
+                    name="confirmPassword" 
+                    ngModel
+                />
+                <img 
+                    [src]="visible.confirmPassword ? './assets/images/vonlight.png' : './assets/images/vofflight.png'"
+                    alt="visibility-toggle"
+                    class="light"
+                    (click)="toggleVisibility('confirmPassword')"
+                />
+                <img 
+                    [src]="visible.confirmPassword ? './assets/images/vondark.png' : './assets/images/voffdark.png'"
+                    alt="visibility-toggle"
+                    class="dark"
+                    (click)="toggleVisibility('confirmPassword')"
+                />
+            </div>
+            <button type="submit" class="registerButton">Register</button>
+        </form>
+    </div>
+</div>

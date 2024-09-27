@@ -1,0 +1,39 @@
+<div class="main-div">
+    <div class="image-div">
+        <img src="assets/images/background.jpg" alt="background">
+    </div>
+    <h1 class="auth-text">Auth.</h1>         
+    <div class="form-div">
+        <div class="head-div">
+            <h1>Login to your account</h1>
+            <br/>
+            <p>Don't have an account? <a href="/register">Register</a></p>
+            <br/>
+        </div>
+        <form class="form" #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
+            <input type="text" class="input" placeholder="Email/Username" name="credential" ngModel>
+            <div class="password">
+                <input 
+                    [type]="visible.password ? 'text' : 'password'" 
+                    placeholder="Password"
+                    class="input"
+                    name="password" 
+                    ngModel
+                />
+                <img 
+                    [src]="visible.password ? './assets/images/vondark.png' : './assets/images/voffdark.png'"
+                    alt="visibility-toggle"
+                    class="dark"
+                    (click)="toggleVisibility('password')"
+                />
+                <img 
+                    [src]="visible.password ? './assets/images/vonlight.png' : './assets/images/vofflight.png'"
+                    alt="visibility-toggle"
+                    class="light"
+                    (click)="toggleVisibility('password')"
+                />
+            </div>
+            <button type="submit" class="loginButton">Login</button>
+        </form>
+    </div>
+</div>
